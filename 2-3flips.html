@@ -18,9 +18,6 @@
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f29191;">
       <div class="container-fluid">
         <a class="navbar-brand active header-text" style="color: #ffe5e2;" href="index.html">Flip A Damn Coin</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="collapse navbar-collapse navbar-div" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
             <li class="nav-item">
@@ -35,43 +32,46 @@
     </nav>
   </header>
 
-<div class="coin-selection">
-  <form>
-    <label for="coins">Choose a coin:</label>
-    <select id="coin-dropdown" onchange="coinSelect()">
-      <option value="Default">Default</option>
-      <option value="Quarter">Quarter</option>
-      <option value="Bitcoin">Bitcoin</option>
-      <option value="Dogecoin">Dogecoin</option>
-    </select>
-</form>
-</div>
-
-<div id="coin-content">
-  <div id="coin">
-    <div class="side-a"><img src="" class="coin-img1" /></div>
-    <div class="side-b"><img src="" class="coin-img2" /></div>
+  <div class="coin-selection">
+    <form>
+      <label for="coins">Choose a coin:</label>
+      <select id="coin-dropdown" onchange="coinSelect()">
+        <option value="Default">Default</option>
+        <option value="Quarter">Quarter</option>
+        <option value="Bitcoin">Bitcoin</option>
+        <option value="Dogecoin">Dogecoin</option>
+      </select>
+    </form>
+    <div class="reset">
+      <button class="btn btn-light btn-outline-danger" >Reset</button>
+    </div>
   </div>
-  <h1 class="result">Click on coin to flip</h1>
-</div>
 
-<div id="coin-content2">
-  <div id="coin2">
-    <div class="side-a2"><img src="" class="coin-img1" /></div>
-    <div class="side-b2"><img src="" class="coin-img2" /></div>
+  <div id="coin-content">
+    <div id="coin">
+      <div class="side-a"><img src="" class="coin-img1" /></div>
+      <div class="side-b"><img src="" class="coin-img2" /></div>
+    </div>
+    <h1 class="result">Click on coin to flip</h1>
   </div>
-  <h1 class="result2">Click on coin to flip</h1>
-</div>
 
-<div id="coin-content3">
-  <div id="coin3">
-    <div class="side-a3"><img src="" class="coin-img1" /></div>
-    <div class="side-b3"><img src="" class="coin-img2" /></div>
+  <div id="coin-content2">
+    <div id="coin2">
+      <div class="side-a2"><img src="" class="coin-img1" /></div>
+      <div class="side-b2"><img src="" class="coin-img2" /></div>
+    </div>
+    <h1 class="result2">Click on coin to flip</h1>
   </div>
-  <h1 class="result3">Click on coin to flip</h1>
-</div>
 
-<h1 class="outcome"></h1>
+  <div id="coin-content3">
+    <div id="coin3">
+      <div class="side-a3"><img src="" class="coin-img1" /></div>
+      <div class="side-b3"><img src="" class="coin-img2" /></div>
+    </div>
+    <h1 class="result3">Click on coin to flip</h1>
+  </div>
+
+  <h1 class="outcome"></h1>
 
   <footer>
     Made with ❤️ by Pat

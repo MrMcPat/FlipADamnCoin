@@ -1,6 +1,7 @@
 //jshint esversion:6
-$('.coin-img1').hide();
-$('.coin-img2').hide();
+for (let i = 1; i < 3; i++) {
+  $('.coin-img' + i).hide();
+}
 
 function coinSelect() {
   let coinSelected = $('#coin-dropdown').val();
@@ -20,13 +21,19 @@ function coinSelect() {
   }
 }
 
-for(let i = 2; i<6; i++){
-  $('#coin-content'+i).hide();
+for (let i = 2; i < 6; i++) {
+  $('#coin-content' + i).hide();
 }
 
 let flipHeads = [];
 
-$('#coin').on('click', function() {
+$('#coin').on('click', coinFlip);
+$('#coin2').on('click', coinFlip2);
+$('#coin3').on('click', coinFlip3);
+$('#coin4').on('click', coinFlip4);
+$('#coin5').on('click', coinFlip5);
+
+function coinFlip() {
   let flipResult = Math.random();
   $('#coin').removeClass();
   setTimeout(function() {
@@ -50,10 +57,10 @@ $('#coin').on('click', function() {
   $('#coin').prop("onclick", null).off('click');
   setTimeout(function() {
     $('#coin-content2').show().addClass('appear-mid');
-  }, 4000);
-});
+  }, 3500);
+}
 
-$('#coin2').on('click', function() {
+function coinFlip2() {
   let flipResult = Math.random();
   $('#coin2').removeClass();
   setTimeout(function() {
@@ -74,11 +81,11 @@ $('#coin2').on('click', function() {
   $('#coin2').prop("onclick", null).off('click');
   setTimeout(function() {
     $('#coin-content3').show();
-  }, 4000);
+  }, 3000);
   $('#coin-content3').addClass('move-right');
-});
+}
 
-$('#coin3').on('click', function() {
+function coinFlip3() {
   let flipResult = Math.random();
   $('#coin3').removeClass();
   setTimeout(function() {
@@ -88,19 +95,108 @@ $('#coin3').on('click', function() {
       setTimeout(function() {
         $('.result3').text("Heads");
         flipHeads.push("Heads");
-        checkOutcome();
+        if (flipHeads.length === 3) {
+          $('.outcome').addClass('appear-mid appear-mid-3').text("Heads win!");
+        } else if (flipHeads.length === 1 || flipHeads.length === 2) {
+          setTimeout(function() {
+            $('#coin-content4').show();
+          });
+          $('#coin-content4').addClass('diag-left');
+        }
       }, 3000);
     } else {
       $('#coin3').addClass('tails3');
       setTimeout(function() {
         $('.result3').text("Tails");
-        checkOutcome();
+        if (flipHeads.length === 0) {
+          $('.outcome').addClass('appear-mid appear-mid-3').text("Tails win!");
+        } else if (flipHeads.length === 1 || flipHeads.length === 2) {
+          setTimeout(function() {
+            $('#coin-content4').show();
+          });
+          $('#coin-content4').addClass('diag-left');
+        }
       }, 3000);
     }
   }, 100);
   $('#coin3').prop("onclick", null).off('click');
-  setTimeout(function() {
-    $('#coin-content4').show();
-  }, 4000);
+}
 
+function coinFlip4() {
+  let flipResult = Math.random();
+  $('#coin4').removeClass();
+  setTimeout(function() {
+    $('.result4').text("Flipping...");
+    if (flipResult <= 0.5) {
+      $('#coin4').addClass('heads4');
+      setTimeout(function() {
+        $('.result4').text("Heads");
+        flipHeads.push("Heads");
+        if (flipHeads.length === 3) {
+          $('.outcome').addClass('appear-mid appear-mid-4').text("Heads win!");
+        } else if (flipHeads.length === 1 || flipHeads.length === 2) {
+          setTimeout(function() {
+            $('#coin-content5').show();
+          });
+          $('#coin-content5').addClass('diag-right');
+        }
+      }, 3000);
+    } else {
+      $('#coin4').addClass('tails4');
+      setTimeout(function() {
+        $('.result4').text("Tails");
+        if (flipHeads.length === 0 || flipHeads.length === 1) {
+          $('.outcome').addClass('appear-mid appear-mid-4').text("Tails win!");
+        } else if (flipHeads.length === 2) {
+          setTimeout(function() {
+            $('#coin-content5').show();
+          });
+          $('#coin-content5').addClass('diag-right');
+        }
+      }, 3000);
+    }
+  }, 100);
+  $('#coin4').prop("onclick", null).off('click');
+}
+
+function coinFlip5() {
+  let flipResult = Math.random();
+  $('#coin5').removeClass();
+  setTimeout(function() {
+    $('.result5').text("Flipping...");
+    if (flipResult <= 0.5) {
+      $('#coin5').addClass('heads5');
+      setTimeout(function() {
+        $('.result5').text("Heads");
+        flipHeads.push("Heads");
+        checkOutcome();
+      }, 3000);
+    } else {
+      $('#coin5').addClass('tails5');
+      setTimeout(function() {
+        $('.result5').text("Tails");
+        checkOutcome();
+      }, 3000);
+    }
+  }, 100);
+  $('#coin5').prop("onclick", null).off('click');
+}
+
+function checkOutcome() {
+  if (flipHeads.length >= 3) {
+    $('.outcome').addClass('appear-mid appear-mid-5').text("Heads win!");
+  } else {
+    $('.outcome').addClass('appear-mid appear-mid-5').text("Tails win!");
+  }
+}
+$('.reset').on('click', function() {
+  // for (let i = 2; i < 4; i++) {
+  //   $('#coin-content' + i).hide();
+  // }
+  // flipHeads=[];
+  // $('#coin').on('click', coinFlip);
+  // $('#coin2').on('click', coinFlip2);
+  // $('#coin3').on('click', coinFlip3);
+  // $('.outcome').text("");
+  location.reload();
 });

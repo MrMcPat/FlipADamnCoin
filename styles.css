@@ -70,6 +70,12 @@ ul {
   font-size: 50px;
 }
 
+.reset {
+  position: relative;
+  top: -32px;
+  left: 280px;
+}
+
 footer {
   position: absolute;
   width: 100%;
@@ -298,6 +304,22 @@ footer {
   bottom: 250px;
 }
 
+.appear-mid-3 {
+  position: relative;
+  bottom: 600px;
+}
+
+.appear-mid-4 {
+  position: absolute;
+  bottom: 850px;
+  left: 55%;
+}
+
+.appear-mid-5 {
+  position: relative;
+  bottom: 1805px;
+}
+
 #coin-content3 {
   position: relative;
   left: 5px;
@@ -306,6 +328,12 @@ footer {
 
 #coin-content3 h1 {
   padding: 50px;
+}
+
+.move-right {
+  animation: moveRight 1s;
+  transition-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 #coin-content4 {
@@ -318,6 +346,12 @@ footer {
   padding: 50px;
 }
 
+.diag-left {
+  animation: diagLeft 1s;
+  transition-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
 #coin-content5 {
   position: relative;
   left: 5px;
@@ -328,8 +362,8 @@ footer {
   padding: 50px;
 }
 
-.move-right {
-  animation: moveRight 1s;
+.diag-right {
+  animation: diagRight 1s;
   transition-duration: 1s;
   animation-fill-mode: forwards;
 }
@@ -376,28 +410,28 @@ footer {
   animation: flipTails 3s ease-out forwards;
 }
 
-#coin3.heads4 {
+#coin4.heads4 {
   -webkit-animation: flipHeads 3s ease-out forwards;
   -moz-animation: flipHeads 3s ease-out forwards;
   -o-animation: flipHeads 3s ease-out forwards;
   animation: flipHeads 3s ease-out forwards;
 }
 
-#coin3.tails4 {
+#coin4.tails4 {
   -webkit-animation: flipTails 3s ease-out forwards;
   -moz-animation: flipTails 3s ease-out forwards;
   -o-animation: flipTails 3s ease-out forwards;
   animation: flipTails 3s ease-out forwards;
 }
 
-#coin3.heads5 {
+#coin5.heads5 {
   -webkit-animation: flipHeads 3s ease-out forwards;
   -moz-animation: flipHeads 3s ease-out forwards;
   -o-animation: flipHeads 3s ease-out forwards;
   animation: flipHeads 3s ease-out forwards;
 }
 
-#coin3.tails5 {
+#coin5.tails5 {
   -webkit-animation: flipTails 3s ease-out forwards;
   -moz-animation: flipTails 3s ease-out forwards;
   -o-animation: flipTails 3s ease-out forwards;
@@ -432,6 +466,32 @@ footer {
 
   to {
     left: 400px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes diagLeft {
+  from {
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+  }
+  to {
+    left: -200px;
+    top: -700px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes diagRight {
+  from {
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+  }
+  to {
+    left: 200px;
+    top: -1055px;
     opacity: 1;
   }
 }
