@@ -1,0 +1,33 @@
+<%- include("partials/header") -%>
+
+<div class="coin-selection">
+  <form>
+    <label for="coins">Choose a coin:</label>
+    <select id="coin-dropdown" onchange="coinSelect()">
+      <option value="Default">Default</option>
+      <option value="Quarter">Quarter</option>
+      <option value="Bitcoin">Bitcoin</option>
+      <option value="Dogecoin">Dogecoin</option>
+    </select>
+  </form>
+</div>
+
+<div id="coin-content">
+  <div id="coin">
+    <div class="side-a"><img src="" class="coin-img1" /></div>
+    <div class="side-b"><img src="" class="coin-img2" /></div>
+  </div>
+  <h1 class="result">Click on coin to flip</h1>
+</div>
+
+<p class="result-heads oneflip-result">Your decision (Heads): <%= resultHeads %></p>
+<p class="result-tails oneflip-result">Your decision (Tails): <%= resultTails %></p>
+
+<footer>
+  Made with ❤️ by Pat
+</footer>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="oneflip.js" charset="utf-8"></script>
+</body>
+
+</html>

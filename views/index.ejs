@@ -1,0 +1,75 @@
+<%- include("partials/header") -%>
+
+<div class="starting-text">
+  <h1 >Welcome to Flip A Damn Coin</h1>
+  <p>
+    Your friendly simple decision making app! Click the coins to start!
+    </p>
+<i class="fas fa-coins"></i>
+  </div>
+
+<form class="outcome-form" action="/" method="POST">
+<div class="inline-div col-lg-4 col-md-6 col-sm-12">
+  <label for="heads">Heads:</label><br />
+    <textarea type="text" id="heads" name="inputHeads" rows="4" cols="50" maxlength= "100" placeholder="Please enter your decision for heads."></textarea><br />
+</div>
+<div class="inline-div col-lg-4 col-md-6 col-sm-12">
+  <label for="tails">Tails:</label><br />
+  <textarea type="text" id="tails" name="inputTails" rows="4" cols="50" maxlength= "100" placeholder="Please enter your decision for tails."></textarea>
+</div>
+<div class="submit-button">
+  <button type="submit" class=" btn btn-lg btn-light btn-outline-danger">Submit Your Decisions...</button>
+</div>
+</form>
+
+<h1 class="choose-flip">...And Then Choose Your flips</h1>
+
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+  <div class="col">
+    <div class="card mb-4 shadow-sm">
+      <div img src="" class="card-img-top">
+      </div>
+      <div class="card-body">
+        <h1 class="card-title ">FEELING BOLD HUH?</h1>
+        <form action="/oneflip">
+            <button type="submit" class="w-100 btn btn-lg btn-light btn-outline-danger">One Coin Flip</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 shadow-sm">
+      <div img src="" class="card-img-top">
+      </div>
+      <div class="card-body">
+        <h1 class="card-title ">Feeling indecisive?</h1>
+        <form action="/2-3flips">
+        <button type="submit" class="w-100 btn btn-lg btn-light btn-outline-warning">2-3 Coin Flips </button>
+      </form>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 shadow-sm">
+      <div img src="" class="card-img-top">
+      </div>
+      <div class="card-body">
+        <h1 class="card-title ">REALLY CAN'T DECIDE?!</h1>
+        <form action="/3-5flips">
+          <button type="submit" class="w-100 btn btn-lg btn-light btn-outline-success">3-5 Coin Flips</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="home-footer">
+  Made with ❤️ by Pat
+</footer>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="index.js" charset="utf-8"></script>
+</body>
+
+</html>
