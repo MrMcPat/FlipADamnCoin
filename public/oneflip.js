@@ -1,9 +1,11 @@
 //jshint esversion:6
+
 //Hides certain HTML elements to be animation later.
 $('.coin-img1').hide();
 $('.coin-img2').hide();
 $('.result-heads').hide();
 $('.result-tails').hide();
+$('.continue-button').hide();
 
 //Drop down menu for user to choose a coin of their liking.
 function coinSelect() {
@@ -29,6 +31,7 @@ $('#coin').on('click', function() {
   let flipResult = Math.random();
   $('.result-heads').hide();
   $('.result-tails').hide();
+  $('.continue-button').hide();
   $('#coin').removeClass();
   setTimeout(function() {
     $('.result').text("Flipping...");
@@ -37,12 +40,14 @@ $('#coin').on('click', function() {
       setTimeout(function() {
         $('.result').text("Heads");
         $('.result-heads').addClass('appear-mid').show();
+        $('.continue-button').addClass('appear-mid').show();
       }, 3000);
     } else {
       $('#coin').addClass('tails');
       setTimeout(function() {
         $('.result').text("Tails");
         $('.result-tails').addClass('appear-mid').show();
+        $('.continue-button').addClass('appear-mid').show();
       }, 3000);
     }
   }, 100);

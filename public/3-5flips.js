@@ -1,4 +1,5 @@
 //jshint esversion:6
+
 //Hides certain HTML elements to be animation later.
 for (let i = 1; i < 3; i++) {
   $('.coin-img' + i).hide();

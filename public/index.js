@@ -1,3 +1,5 @@
+//jshint esversion:6
+
 //Hides elements for them to be animated later.
 $('.outcome-form').hide();
 $('.choose-flip').hide();

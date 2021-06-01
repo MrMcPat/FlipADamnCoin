@@ -1,6 +1,6 @@
 body {
   background: #e2bcb7;
-  color: #ffe5e2;
+  color: white;
   -webkit-perspective: 800px;
   font-family: 'Comfortaa', cursive;
   overflow: hidden;
@@ -523,6 +523,38 @@ footer {
   animation: flipTails 3s ease-out forwards;
 }
 
+.continue-button {
+  position: relative;
+  left: 895px;
+  top: 50px;
+}
+
+.continue-button2a {
+
+}
+
+.continue-button2b {
+
+}
+
+.continue-button3a {
+
+}
+
+.continue-button3b {
+
+}
+
+.continue-button3c {
+
+}
+
+.survey-form {
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+}
+
 @-webkit-keyframes disappearMid {
   from {
     opacity: 1;
@@ -617,3 +649,9 @@ footer {
     transform: rotateX(1980deg);
   }
 }
+
+/* @media only screen
+  and (max-width: 1000px)
+ {
+
+} */

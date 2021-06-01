@@ -1,0 +1,29 @@
+<%- include("partials/header") -%>
+
+<form class="survey-form" action="/survey" method="POST">
+  <h1>Now let's do a mini survey, shall we?</h1><br />
+  <p>Now be honest...what did you get?</p>
+  <input type="radio" id="surveyHeads" value="Heads" name="surveyResults" />
+  <label for="surveyHeads">Heads</label><br />
+  <input type="radio" id="surveyTails" value="Tails" name="surveyResults" />
+  <label for="surveyTails">Tails</label><br /><br />
+
+  <p>Was that the result that you wanted?</p>
+  <input type="radio" id="surveyYes" value="Yes" name="surveyYesNo" />
+  <label for="surveyYes">Yes</label><br />
+  <input type="radio" id="surveyNo" value="No" name="surveyYesNo" />
+  <label for="surveyNo">No</label><br /><br />
+
+  <p>Any additional comments? (Optional)</p>
+    <textarea type="text" id="additional-comments" name="inputComments" rows="4" cols="75" maxlength= "400" placeholder="Enter your comments..."></textarea><br />
+    <button type="submit" class=" btn btn-lg btn-light btn-outline-danger">Submit</button>
+</form>
+
+<footer>
+  Made with ❤️ by Pat
+</footer>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="survey.js" charset="utf-8"></script>
+</body>
+
+</html>
