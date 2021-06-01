@@ -6,6 +6,7 @@ for (let i = 1; i < 3; i++) {
 }
 $('.result-heads').hide();
 $('.result-tails').hide();
+$('#cont-button2').hide();
 
 //Drop down menu for user to choose a coin of their liking.
 function coinSelect() {
@@ -76,7 +77,8 @@ function coinFlip2() {
         $('.result2').text("Heads");
         flipHeads.push("Heads");
         if (flipHeads.length === 2) {
-          $('.result-heads').addClass('appear-mid appear-mid-2').show();
+          $('.result-heads').addClass('appear-mid appear-mid-2 outcome2').show();
+          $('#cont-button2').addClass('appear-mid continue-button2a').show();
         } else if (flipHeads.length === 1) {
           setTimeout(function() {
             $('#coin-content3').show();
@@ -89,7 +91,8 @@ function coinFlip2() {
       setTimeout(function() {
         $('.result2').text("Tails");
         if (flipHeads.length === 0) {
-          $('.result-tails').addClass('appear-mid appear-mid-2').show();
+          $('.result-tails').addClass('appear-mid appear-mid-2 outcome2').show();
+          $('#cont-button2').addClass('appear-mid continue-button2a').show();
         } else if (flipHeads.length === 1) {
           setTimeout(function() {
             $('#coin-content3').show();
@@ -128,8 +131,10 @@ function coinFlip3() {
 function checkOutcome() {
   if (flipHeads.length >= 2) {
     $('.result-heads').addClass('appear-mid').show();
+    $('#cont-button2').addClass('appear-mid continue-button2b').show();
   } else {
     $('.result-tails').addClass('appear-mid').show();
+    $('#cont-button2').addClass('appear-mid continue-button2b').show();
   }
 }
 

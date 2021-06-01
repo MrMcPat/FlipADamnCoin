@@ -8,7 +8,7 @@ body {
 
 .nav-link {
   position: relative;
-  right: 150px;
+  right: 350px;
 }
 
 h1 {
@@ -396,8 +396,8 @@ footer {
 
 .appear-mid-4 {
   position: absolute;
-  bottom: 1350px;
-  left: 40%;
+  bottom: 1425px;
+  left: 700px;
 }
 
 .appear-mid-5 {
@@ -530,23 +530,33 @@ footer {
 }
 
 .continue-button2a {
-
+  position: relative;
+  left: 895px;
+  top: -250px;
 }
 
 .continue-button2b {
-
+  position: relative;
+  left: 895px;
+  top: -600px;
 }
 
 .continue-button3a {
-
+  position: relative;
+  left: 895px;
+  top: -600px;
 }
 
 .continue-button3b {
-
+  position: relative;
+  left: 895px;
+  top: -1385px;
 }
 
 .continue-button3c {
-
+  position: relative;
+  left: 895px;
+  top: -1815px;
 }
 
 .survey-form {
@@ -650,8 +660,150 @@ footer {
   }
 }
 
-/* @media only screen
-  and (max-width: 1000px)
+@media only screen
+  and (max-width: 1600px)
+  and (min-width: 1280px)
  {
 
-} */
+.inline-div {
+  display: inline-block;
+  position: relative;
+  left: 250px;
+  margin: 30px;
+}
+
+.submit-button {
+  position: relative;
+  left: 650px;
+}
+
+.card-title {
+  padding: 10px;
+  font-size: 40px;
+}
+
+.row {
+  padding: 0 40px;
+  top: 100px;
+}
+
+footer {
+  top: 725px;
+}
+
+#coin {
+  bottom: 60px;
+}
+
+.result {
+  position: relative;
+  bottom: 75px;
+}
+
+.oneflip-result {
+  bottom: 25px;
+}
+
+.continue-button {
+  left: 730px;
+  top: -30px;
+}
+
+#coin2 {
+  bottom: 65px;
+}
+
+#coin3 {
+  bottom: 67px;
+}
+
+.result2 {
+  position: relative;
+  bottom: 78px;
+}
+
+.result3 {
+  position: relative;
+  bottom: 85px;
+}
+
+.outcome {
+  bottom: 725px;
+}
+
+.outcome2 {
+  bottom: 375px;
+}
+
+.continue-button2a {
+  left: 660px;
+  top: -385px;
+}
+
+.continue-button2b {
+  left: 660px;
+  top: -735px;
+}
+
+#coin4 {
+  bottom: 150px;
+}
+
+#coin5 {
+  bottom: 150px;
+}
+
+.result4 {
+  position: relative;
+  bottom: 157px;
+}
+
+.result5 {
+  position: relative;
+  bottom: 157px;
+}
+
+.outcome3 {
+  bottom: 1165px;
+  left: 225px;
+  font-size: 25px;
+}
+
+.outcome4 {
+  bottom: 1475px;
+  font-size: 25px;
+}
+
+.outcome5 {
+  bottom: 1870px;
+  left: 225px;
+  font-size: 25px;
+}
+
+.continue-button3a {
+  left: 915px;
+  top: -1175px;
+}
+
+.continue-button3b {
+  left: 915px;
+  top: -1445px;
+}
+
+.continue-button3c {
+  left: 915px;
+  top: -1885px;
+}
+
+.survey-form {
+  margin-top: 10px;
+}
+
+.survey-form h1 {
+  font-size: 25px;
+}
+
+.survey-form p, input, label {
+  font-size: 20px;
+}
+}

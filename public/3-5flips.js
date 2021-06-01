@@ -6,6 +6,7 @@ for (let i = 1; i < 3; i++) {
 }
 $('.result-heads').hide();
 $('.result-tails').hide();
+$('#cont-button3').hide();
 
 //Drop down menu for user to choose a coin of their liking.
 function coinSelect() {
@@ -102,7 +103,8 @@ function coinFlip3() {
         $('.result3').text("Heads");
         flipHeads.push("Heads");
         if (flipHeads.length === 3) {
-          $('.result-heads').addClass('appear-mid appear-mid-3').show();
+          $('.result-heads').addClass('appear-mid appear-mid-3 outcome3').show();
+          $('#cont-button3').addClass('appear-mid continue-button3a').show();
         } else if (flipHeads.length === 1 || flipHeads.length === 2) {
           setTimeout(function() {
             $('#coin-content4').show();
@@ -115,7 +117,8 @@ function coinFlip3() {
       setTimeout(function() {
         $('.result3').text("Tails");
         if (flipHeads.length === 0) {
-          $('.result-tails').addClass('appear-mid appear-mid-3').show();
+          $('.result-tails').addClass('appear-mid appear-mid-3 outcome3').show();
+          $('#cont-button3').addClass('appear-mid continue-button3a').show();
         } else if (flipHeads.length === 1 || flipHeads.length === 2) {
           setTimeout(function() {
             $('#coin-content4').show();
@@ -139,7 +142,8 @@ function coinFlip4() {
         $('.result4').text("Heads");
         flipHeads.push("Heads");
         if (flipHeads.length === 3) {
-          $('.result-heads').addClass('appear-mid appear-mid-4').show();
+          $('.result-heads').addClass('appear-mid appear-mid-4 outcome4').show();
+          $('#cont-button3').addClass('appear-mid continue-button3b').show();
         } else if (flipHeads.length === 1 || flipHeads.length === 2) {
           setTimeout(function() {
             $('#coin-content5').show();
@@ -152,7 +156,8 @@ function coinFlip4() {
       setTimeout(function() {
         $('.result4').text("Tails");
         if (flipHeads.length === 0 || flipHeads.length === 1) {
-          $('.result-tails').addClass('appear-mid appear-mid-4').show();
+          $('.result-tails').addClass('appear-mid appear-mid-4 outcome4').show();
+          $('#cont-button3').addClass('appear-mid continue-button3b').show();
         } else if (flipHeads.length === 2) {
           setTimeout(function() {
             $('#coin-content5').show();
@@ -190,9 +195,11 @@ function coinFlip5() {
 
 function checkOutcome() {
   if (flipHeads.length >= 3) {
-    $('.result-heads').addClass('appear-mid appear-mid-5').show();
+    $('.result-heads').addClass('appear-mid appear-mid-5 outcome5').show();
+    $('#cont-button3').addClass('appear-mid continue-button3c').show();
   } else {
-    $('.result-tails').addClass('appear-mid appear-mid-5').show();
+    $('.result-tails').addClass('appear-mid appear-mid-5 outcome5').show();
+    $('#cont-button3').addClass('appear-mid continue-button3c').show();
   }
 }
 $('.reset').on('click', function() {
