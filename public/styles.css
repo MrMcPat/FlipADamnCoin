@@ -807,3 +807,17 @@ footer {
   font-size: 20px;
 }
 }
+
+@media only screen
+  and (max-width: 1680px)
+  and (min-width: 1600px)
+{
+footer {
+  top: 875px;
+}
+
+.continue-button2a, .continue-button2b, .continue-button3a, .continue-button3b, .continue-button3c {
+  left: 760px;
+}
+
+}
