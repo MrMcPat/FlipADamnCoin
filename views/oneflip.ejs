@@ -22,8 +22,8 @@
 
 <p class="result-heads oneflip-result">Your decision (Heads): <%= resultHeads %></p>
 <p class="result-tails oneflip-result">Your decision (Tails): <%= resultTails %></p>
-<form class="continue-button" action="/survey">
-  <button type="submit" class="btn btn-lg btn-light btn-outline-danger">Continue...</button>
+<form class="continue-button" action="/oneflip" method="POST">
+  <button type="submit" class="result-button btn btn-lg btn-light btn-outline-danger" name="continue" value="">Continue...</button>
   </form>
 
 <footer>

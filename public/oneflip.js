@@ -41,6 +41,7 @@ $('#coin').on('click', function() {
         $('.result').text("Heads");
         $('.result-heads').addClass('appear-mid').show();
         $('.continue-button').addClass('appear-mid').show();
+        $('.result-button').val("Heads");
       }, 3000);
     } else {
       $('#coin').addClass('tails');
@@ -48,6 +49,7 @@ $('#coin').on('click', function() {
         $('.result').text("Tails");
         $('.result-tails').addClass('appear-mid').show();
         $('.continue-button').addClass('appear-mid').show();
+          $('.result-button').val("Tails");
       }, 3000);
     }
   }, 100);

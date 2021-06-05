@@ -19,6 +19,7 @@ mongoose.connect("mongodb+srv://admin-pat:789632145@cluster0.smilb.mongodb.net/c
 mongoose.set('useFindAndModify', false);
 
 let postOutcome;
+let postResult;
 
 const coinFlipSchema = {
   headsInput: String,
@@ -49,6 +50,12 @@ app.get("/oneflip", function(req, res) {
   });
 });
 
+app.post("/oneflip", function(req, res) {
+  const possibleResult = req.body.continue;
+  postResult = possibleResult;
+  res.redirect("/survey");
+});
+
 app.get("/2-3flips", function(req, res) {
   res.render("2-3flips", {
     resultHeads: postOutcome.heads,
@@ -56,11 +63,23 @@ app.get("/2-3flips", function(req, res) {
   });
 });
 
+app.post("/2-3flips", function(req, res) {
+  const possibleResult = req.body.continue;
+  postResult = possibleResult;
+  res.redirect("/survey");
+});
+
 app.get("/3-5flips", function(req, res) {
   res.render("3-5flips", {
     resultHeads: postOutcome.heads,
     resultTails: postOutcome.tails
   });
+});
+
+app.post("/3-5flips", function(req, res) {
+  const possibleResult = req.body.continue;
+  postResult = possibleResult;
+  res.redirect("/survey");
 });
 
 app.get("/about", function(req, res) {
@@ -75,7 +94,7 @@ app.post("/survey", function(req, res) {
   postOutcome = new CoinFlip({
     headsInput: postOutcome.heads,
     tailsInput: postOutcome.tails,
-    surveyResults: req.body.surveyResults,
+    surveyResults: postResult,
     yesNoResults: req.body.surveyYesNo,
     comments: req.body.inputComments
   });

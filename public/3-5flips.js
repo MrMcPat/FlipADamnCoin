@@ -105,6 +105,7 @@ function coinFlip3() {
         if (flipHeads.length === 3) {
           $('.result-heads').addClass('appear-mid appear-mid-3 outcome3').show();
           $('#cont-button3').addClass('appear-mid continue-button3a').show();
+          $('.result-button').val("Heads");
         } else if (flipHeads.length === 1 || flipHeads.length === 2) {
           setTimeout(function() {
             $('#coin-content4').show();
@@ -119,6 +120,7 @@ function coinFlip3() {
         if (flipHeads.length === 0) {
           $('.result-tails').addClass('appear-mid appear-mid-3 outcome3').show();
           $('#cont-button3').addClass('appear-mid continue-button3a').show();
+          $('.result-button').val("Tails");
         } else if (flipHeads.length === 1 || flipHeads.length === 2) {
           setTimeout(function() {
             $('#coin-content4').show();
@@ -144,6 +146,7 @@ function coinFlip4() {
         if (flipHeads.length === 3) {
           $('.result-heads').addClass('appear-mid appear-mid-4 outcome4').show();
           $('#cont-button3').addClass('appear-mid continue-button3b').show();
+          $('.result-button').val("Heads");
         } else if (flipHeads.length === 1 || flipHeads.length === 2) {
           setTimeout(function() {
             $('#coin-content5').show();
@@ -158,6 +161,7 @@ function coinFlip4() {
         if (flipHeads.length === 0 || flipHeads.length === 1) {
           $('.result-tails').addClass('appear-mid appear-mid-4 outcome4').show();
           $('#cont-button3').addClass('appear-mid continue-button3b').show();
+          $('.result-button').val("Tails");
         } else if (flipHeads.length === 2) {
           setTimeout(function() {
             $('#coin-content5').show();
@@ -197,9 +201,11 @@ function checkOutcome() {
   if (flipHeads.length >= 3) {
     $('.result-heads').addClass('appear-mid appear-mid-5 outcome5').show();
     $('#cont-button3').addClass('appear-mid continue-button3c').show();
+    $('.result-button').val("Heads");
   } else {
     $('.result-tails').addClass('appear-mid appear-mid-5 outcome5').show();
     $('#cont-button3').addClass('appear-mid continue-button3c').show();
+    $('.result-button').val("Tails");
   }
 }
 $('.reset').on('click', function() {
