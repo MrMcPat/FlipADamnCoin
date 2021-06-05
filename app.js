@@ -2,10 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
-
-// const { JSDOM } = require( "jsdom" );
-// const { window } = new JSDOM( `<!DOCTYPE html><body><p id="main">Hello World!</p></body>` );
-// const $ = require( "jquery" )( window );
+const mongoose = require("mongoose");
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
@@ -13,10 +10,31 @@ app.set('view engine', 'ejs');
 
 app.use(express.static("public"));
 
+mongoose.connect("mongodb://localhost:27017/coinflipDB", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.set('useFindAndModify', false);
+
 let postOutcome;
+
+const coinFlipSchema = {
+  headsInput: String,
+  tailsInput: String,
+  surveyResults: String,
+  yesNoResults: String,
+  comments: String
+};
+
+const CoinFlip = mongoose.model("CoinFlip", coinFlipSchema);
 
 app.get("/", function(req, res){
   res.render("index");
+});
+
+app.post("/", function(req, res){
+  const possibleOutcome = {
+    heads: req.body.inputHeads,
+    tails: req.body.inputTails
+  };
+  postOutcome = possibleOutcome;
 });
 
 app.get("/oneflip", function(req, res){
@@ -40,10 +58,6 @@ app.get("/3-5flips", function(req, res){
   });
 });
 
-app.get("/history", function(req, res){
-  res.render("history");
-});
-
 app.get("/about", function(req, res){
   res.render("about");
 });
@@ -52,22 +66,32 @@ app.get("/survey", function(req, res){
   res.render("survey");
 });
 
-app.post("/", function(req, res){
-  const possibleOutcome = {
-    heads: req.body.inputHeads,
-    tails: req.body.inputTails
-  };
-  postOutcome=possibleOutcome;
+app.post("/survey", function(req, res){
+  postOutcome = new CoinFlip({
+    headsInput: postOutcome.heads,
+    tailsInput: postOutcome.tails,
+    surveyResults: req.body.surveyResults,
+    yesNoResults: req.body.surveyYesNo,
+    comments: req.body.inputComments
+  });
+  postOutcome.save();
+  res.redirect("/history");
 });
 
-app.post("/survey", function(req, res){
-  const surveyAnswers = {
-    results: req.body.surveyResults,
-    yesNo: req.body.surveyYesNo,
-    comments: req.body.inputComments
-  };
-  console.log(surveyAnswers);
-  // res.redirect("/");
+app.get("/history", function(req, res){
+  CoinFlip.find({}, function(err, coinflips){
+    res.render("history", {
+      results: coinflips
+    });
+  });
+});
+
+app.post("/delete", function(req, res){
+  const coinFlipId = req.body.delete;
+
+  CoinFlip.findByIdAndRemove(coinFlipId, function(err){
+    res.redirect("/history");
+  });
 });
 
 app.listen(process.env.PORT || 3000, function() {

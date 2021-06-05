@@ -49,17 +49,17 @@ p {
   font-size: 30px;
 }
 
-i {
+.starting-coin {
   font-size: 100px;
   padding: 30px;
   color: #ffc93c;
 }
 
-i:hover {
+.starting-coin:hover {
   color: #f9b208;
 }
 
-i:active {
+.starting-coin:active {
   color: #a35709;
 }
 
@@ -565,6 +565,36 @@ footer {
   margin-top: 20px;
 }
 
+.history-title {
+  margin-top: 40px;
+  font-size: 60px;
+}
+
+.history-table {
+  margin: 20px auto;
+  font-size: 15px;
+  text-align: center;
+  table-layout: fixed;
+  width: 1500px;
+}
+
+.history-table th {
+  font-size: 25px;
+  padding: 10px 20px;
+  background-color: #c64756;
+  border: 2px solid #7b113a;
+}
+
+.history-table td {
+  overflow-wrap: break-word;
+  background-color: #f29191;
+  border: 2px solid #7b113a;
+}
+
+.trash-can {
+  color: white;
+}
+
 @-webkit-keyframes disappearMid {
   from {
     opacity: 1;
@@ -662,7 +692,6 @@ footer {
 
 @media only screen
   and (max-width: 1600px)
-  and (min-width: 1280px)
  {
 
 .inline-div {
@@ -819,5 +848,27 @@ footer {
 .continue-button2a, .continue-button2b, .continue-button3a, .continue-button3b, .continue-button3c {
   left: 760px;
 }
-
 }
+
+@media only screen
+  and (max-width: 1400px)
+  {
+    .starting-text {
+
+      top: 50px;
+      color: white;
+    }
+
+    .starting-text h1 {
+      font-size: 50px;
+      padding: 15px;
+    }
+
+    .starting-text p {
+      font-size: 20px;
+    }
+
+    footer {
+      top: 593px;
+    }
+  }

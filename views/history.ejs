@@ -38,15 +38,30 @@ body {
     </nav>
   </header>
 
+<h1 class="history-title">Past Coin Flips</h1>
+<form action="/delete" method="POST">
+  <table class="history-table">
+    <tr>
+      <th>Your Heads Decision</th>
+      <th>Your Tails Decision</th>
+      <th>Your Result</th>
+      <th>Was it your desired result?</th>
+      <th>Additional Comments</th>
+      <th><i class="trash-can fas fa-trash"></i></th>
+    </tr>
+    <% results.forEach(function(coinflip){ %>
+    <tr>
+        <td><%= coinflip.headsInput %></td>
+        <td><%= coinflip.tailsInput %></td>
+        <td><%= coinflip.surveyResults %></td>
+        <td><%= coinflip.yesNoResults %></td>
+        <td><%= coinflip.comments %></td>
+        <td><button type="submit" class="btn btn-sm btn-light btn-outline-danger" name="delete" value="<%=coinflip._id%>"/>Delete</button></td>
+    </tr>
+        <% }) %>
+  </table>
+</form>
 
-
-
-
-<footer class="home-footer">
-  Made with ❤️ by Pat
-</footer>
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-<script src="" charset="utf-8"></script>
 </body>
 
 </html>
