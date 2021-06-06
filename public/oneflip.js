@@ -41,7 +41,7 @@ $('#coin').on('click', function() {
         $('.result').text("Heads");
         $('.result-heads').addClass('appear-mid').show();
         $('.continue-button').addClass('appear-mid').show();
-        $('.result-button').val("Heads");
+        $('.result-button').val("Heads (One flip)");
       }, 3000);
     } else {
       $('#coin').addClass('tails');
@@ -49,7 +49,7 @@ $('#coin').on('click', function() {
         $('.result').text("Tails");
         $('.result-tails').addClass('appear-mid').show();
         $('.continue-button').addClass('appear-mid').show();
-          $('.result-button').val("Tails");
+          $('.result-button').val("Tails (One flip)");
       }, 3000);
     }
   }, 100);

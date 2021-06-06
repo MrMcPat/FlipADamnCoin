@@ -79,7 +79,7 @@ function coinFlip2() {
         if (flipHeads.length === 2) {
           $('.result-heads').addClass('appear-mid appear-mid-2 outcome2').show();
           $('#cont-button2').addClass('appear-mid continue-button2a').show();
-          $('.result-button').val("Heads");
+          $('.result-button').val("Heads (2-3 flips)");
         } else if (flipHeads.length === 1) {
           setTimeout(function() {
             $('#coin-content3').show();
@@ -94,7 +94,7 @@ function coinFlip2() {
         if (flipHeads.length === 0) {
           $('.result-tails').addClass('appear-mid appear-mid-2 outcome2').show();
           $('#cont-button2').addClass('appear-mid continue-button2a').show();
-          $('.result-button').val("Tails");
+          $('.result-button').val("Tails (2-3 flips)");
         } else if (flipHeads.length === 1) {
           setTimeout(function() {
             $('#coin-content3').show();
@@ -134,11 +134,11 @@ function checkOutcome() {
   if (flipHeads.length >= 2) {
     $('.result-heads').addClass('appear-mid').show();
     $('#cont-button2').addClass('appear-mid continue-button2b').show();
-    $('.result-button').val("Heads");
+    $('.result-button').val("Heads (2-3 flips)");
   } else {
     $('.result-tails').addClass('appear-mid').show();
     $('#cont-button2').addClass('appear-mid continue-button2b').show();
-    $('.result-button').val("Tails");
+    $('.result-button').val("Tails (2-3 flips)");
   }
 }
 
