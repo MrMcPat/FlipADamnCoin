@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://admin-<NAME>:<PASSWORD>@cluster0.smilb.mongodb.net/coinflipDB?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://admin-pat:789632145@cluster0.smilb.mongodb.net/coinflipDB?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -23,6 +23,7 @@ let postResult;
 
 const coinFlipSchema = {
   dateTime: String,
+  name: String,
   headsInput: String,
   tailsInput: String,
   surveyResults: String,
@@ -100,6 +101,7 @@ app.post("/survey", function(req, res) {
     (currentDate.getHours()-4) + ":" +
     currentDate.getMinutes() + ":" +
     currentDate.getSeconds(),
+    name: req.body.name,
     headsInput: postOutcome.heads,
     tailsInput: postOutcome.tails,
     surveyResults: postResult,
