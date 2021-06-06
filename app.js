@@ -22,6 +22,7 @@ let postOutcome;
 let postResult;
 
 const coinFlipSchema = {
+  dateTime: String,
   headsInput: String,
   tailsInput: String,
   surveyResults: String,
@@ -91,7 +92,14 @@ app.get("/survey", function(req, res) {
 });
 
 app.post("/survey", function(req, res) {
+  let currentDate = new Date();
   postOutcome = new CoinFlip({
+    dateTime: currentDate.getDate() + "/" +
+    currentDate.getMonth() + "/" +
+    currentDate.getFullYear() + " at " +
+    currentDate.getHours() + ":" +
+    currentDate.getMinutes() + ":" + 
+    currentDate.getSeconds(),
     headsInput: postOutcome.heads,
     tailsInput: postOutcome.tails,
     surveyResults: postResult,

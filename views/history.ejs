@@ -42,6 +42,7 @@ body {
 <form action="/delete" method="POST">
   <table class="history-table">
     <tr>
+      <th>Date and Time</th>
       <th>Your Heads Decision</th>
       <th>Your Tails Decision</th>
       <th>Your Result</th>
@@ -51,6 +52,7 @@ body {
     </tr>
     <% results.forEach(function(coinflip){ %>
     <tr>
+        <td><%= coinflip.dateTime %></td>
         <td><%= coinflip.headsInput %></td>
         <td><%= coinflip.tailsInput %></td>
         <td><%= coinflip.surveyResults %></td>
