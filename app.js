@@ -94,11 +94,11 @@ app.get("/survey", function(req, res) {
 app.post("/survey", function(req, res) {
   let currentDate = new Date();
   postOutcome = new CoinFlip({
-    dateTime: currentDate.getDate() + "/" +
-    currentDate.getMonth() + "/" +
+    dateTime: currentDate.getMonth() + 1 + "/" +
+    currentDate.getDate() + "/" +
     currentDate.getFullYear() + " at " +
-    currentDate.getHours() + ":" +
-    currentDate.getMinutes() + ":" + 
+    (currentDate.getHours()-4) + ":" +
+    currentDate.getMinutes() + ":" +
     currentDate.getSeconds(),
     headsInput: postOutcome.heads,
     tailsInput: postOutcome.tails,
