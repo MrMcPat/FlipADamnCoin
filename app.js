@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://admin-pat:789632145@cluster0.smilb.mongodb.net/coinflipDB?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://admin-<NAME>:<PASSWORD>@cluster0.smilb.mongodb.net/coinflipDB?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
